@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>For Someone Special ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #12000d, #3b001f, #ff0f5b);
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px 20px;
+      position: relative;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 700px;
+      padding: 45px 25px;
+      border-radius: 30px;
+
+      background: rgba(255,255,255,0.10);
+      backdrop-filter: blur(18px);
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.45),
+        inset 0 0 30px rgba(255,255,255,0.04);
+
+      border: 1px solid rgba(255,255,255,0.2);
+
+      z-index: 2;
+    }
+
+    /* HEART */
+    .heart {
+      font-size: 70px;
+      animation: beat 1.2s infinite;
+      filter: drop-shadow(0 0 15px #ff4d88);
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    /* HEADING */
+    h1 {
+      font-size: clamp(35px, 8vw, 65px);
+      margin: 15px 0;
+
+      color: #fff;
+
+      text-shadow:
+        0 0 10px #ff4d88,
+        0 0 30px #ff2165;
+    }
+
+    /* TYPING */
+    .typing {
+      font-size: 20px;
+      min-height: 35px;
+
+      color: #ffd6e5;
+
+      margin-bottom: 25px;
+    }
+
+    /* PHOTO */
+    .photo-box {
+      width: 240px;
+      height: 240px;
+
+      margin: 25px auto;
+
+      border-radius: 50%;
+
+      overflow: hidden;
+
+      border: 5px solid #ff6b9d;
+
+      box-shadow:
+        0 0 20px #ff2165,
+        0 0 50px rgba(255,33,101,0.5);
+
+      transition: 0.4s;
+    }
+
+    .photo-box:hover {
+      transform: scale(1.05);
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* MESSAGE */
+    .message {
+      line-height: 1.9;
+
+      font-size: 17px;
+
+      color: #ffeaf2;
+
+      margin: 25px auto;
+
+      max-width: 600px;
+    }
+
+    .highlight {
+      color: #ffb3cd;
+      font-weight: bold;
+    }
+
+    /* BUTTON */
+    button {
+      border: none;
+
+      padding: 15px 30px;
+
+      border-radius: 50px;
+
+      background:
+        linear-gradient(45deg, #ff174f, #ff70a3);
+
+      color: white;
+
+      font-size: 17px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 8px 25px rgba(255,0,80,0.4);
+
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+
+      box-shadow:
+        0 12px 35px rgba(255,0,80,0.6);
+    }
+
+    /* SURPRISE */
+    #surprise {
+      display: none;
+
+      margin-top: 30px;
+
+      font-size: 22px;
+
+      color: #fff;
+
+      line-height: 1.7;
+
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* FLOATING HEARTS */
+    .floating-heart {
+      position: fixed;
+
+      bottom: -30px;
+
+      font-size: 25px;
+
+      animation: floatUp linear forwards;
+
+      opacity: 0.8;
+
+      z-index: 1;
+
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform:
+          translateY(0)
+          rotate(0deg);
+
+        opacity: 0.8;
+      }
+
+      to {
+        transform:
+          translateY(-110vh)
+          rotate(360deg);
+
+        opacity: 0;
+      }
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 30px;
+
+      color: #ffc4d8;
+
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+
+      .card {
+        padding: 40px 20px;
+      }
+
+      .photo-box {
+        width: 210px;
+        height: 210px;
+      }
+
+      .message {
+        font-size: 15px;
+      }
+
+      .typing {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <!-- HEART -->
+      <div class="heart">❤️</div>
+
+
+      <!-- TITLE -->
+      <h1>Hey, Beautifull Princess Jiii</h1>
+
+
+      <!-- TYPING TEXT -->
+      <div class="typing" id="typing"></div>
+
+
+      <!-- YOUR PHOTO -->
+      <div class="photo-box">
+
+        <img
+          src="IMG_20260909_175140_398.jpg"
+          alt="Someone Special"
+        />
+
+      </div>
+
+
+      <!-- HINGLISH MESSAGE -->
+      <p class="message">
+Pata nahi kuch log life mein aakar kab itne special ban jaate hain… ✨
+
+Bas tum bhi unhi logon mein se ho. ❤️ Tumhari ek simple si smile bhi mood ko automatically better kar deti hai.
+
+Tumhari choti-choti baatein, tumhara cute sa attitude, aur tumhari woh simple si smile… pata nahi kyun, par in sab mein kuch alag hi baat hai. 🫶
+
+Life mein bahut saare log milte hain, baatein hoti hain, memories banti hain… lekin kuch logon ki presence hi alag feel hoti hai.
+
+Aur honestly… tum unhi special logon mein se ho. ❤️
+
+Bas hamesha aise hi smile karti rehna, kyunki tumhari smile sach mein bahut achhi lagti hai. ✨
+        Aur honestly...
+        <span class="highlight">
+          tum unhi logon mein se ho. ❤️
+        </span>
+
+      </p>
+
+
+      <!-- BUTTON -->
+      <button onclick="showSurprise()">
+        Click Karo... Ek Surprise Hai 💌
+      </button>
+
+
+      <!-- SURPRISE -->
+      <div id="surprise">
+
+        🌹 Ek baat bolu?
+
+        <br><br>
+
+        Tum jitni cute ho,
+        usse kahi zyada special ho. ❤️
+
+        <br><br>
+
+        Always Keep Smiling.
+
+      </div>
+
+
+      <!-- FOOTER -->
+      <div class="footer">
+
+        Made with ❤️ & mayank sir jii 
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* =========================
+       TYPING EFFECT
+    ========================= */
+
+    const text =
+      "Tumhari smile ka koi competition hi nahi... ❤️";
+
+    let index = 0;
+
+    function typeText() {
+
+      if (index < text.length) {
+
+        document.getElementById("typing")
+          .textContent += text.charAt(index);
+
+        index++;
+
+        setTimeout(typeText, 65);
+
+      }
+
+    }
+
+    typeText();
+
+
+    /* =========================
+       SURPRISE BUTTON
+    ========================= */
+
+    function showSurprise() {
+
+      const surprise =
+        document.getElementById("surprise");
+
+      surprise.style.display = "block";
+
+
+      /* Create many hearts */
+
+      for (let i = 0; i < 35; i++) {
+
+        setTimeout(() => {
+          createHeart();
+        }, i * 80);
+
+      }
+
+    }
+
+
+    /* =========================
+       FLOATING HEARTS
+    ========================= */
+
+    function createHeart() {
+
+      const heart =
+        document.createElement("div");
+
+      heart.className =
+        "floating-heart";
+
+
+      const hearts = [
+        "❤️",
+        "💕",
+        "💖",
+        "💗",
+        "💘",
+        "💝",
+        "✨"
+      ];
+
+
+      heart.innerHTML =
+        hearts[
+          Math.floor(
+            Math.random() * hearts.length
+          )
+        ];
+
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+      heart.style.animationDuration =
+        (3 + Math.random() * 5) + "s";
+
+
+      heart.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+
+      document.body.appendChild(heart);
+
+
+      setTimeout(() => {
+
+        heart.remove();
+
+      }, 8000);
+
+    }
+
+
+    /* Automatic Hearts */
+
+    setInterval(createHeart, 700);
+
+  </script>
+
+</body>
+</html>
