@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>For Someone Special ❤️</title>
+  <title>For My Beautiful Princess ❤️</title>
 
   <style>
     * {
@@ -15,10 +15,14 @@
     }
 
     body {
-      background: linear-gradient(135deg, #12000d, #3b001f, #ff0f5b);
-      color: white;
       min-height: 100vh;
+      color: white;
       overflow-x: hidden;
+
+      background:
+        radial-gradient(circle at 10% 10%, #72003b, transparent 35%),
+        radial-gradient(circle at 90% 90%, #68002f, transparent 35%),
+        linear-gradient(135deg, #10000b, #260015, #520027);
     }
 
     .container {
@@ -26,84 +30,125 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 30px 20px;
-      position: relative;
+      padding: 30px 15px;
     }
 
     .card {
       width: 100%;
-      max-width: 700px;
-      padding: 45px 25px;
-      border-radius: 30px;
+      max-width: 720px;
+      padding: 50px 30px;
+      text-align: center;
 
-      background: rgba(255,255,255,0.10);
-      backdrop-filter: blur(18px);
+      border-radius: 35px;
+
+      background: rgba(255, 255, 255, 0.09);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      border: 1px solid rgba(255, 255, 255, 0.18);
 
       box-shadow:
-        0 20px 60px rgba(0,0,0,0.45),
-        inset 0 0 30px rgba(255,255,255,0.04);
+        0 25px 80px rgba(0, 0, 0, 0.55),
+        inset 0 0 40px rgba(255, 255, 255, 0.03);
 
-      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+      z-index: 5;
 
-      z-index: 2;
+      animation: cardIn 1s ease;
     }
 
-    /* HEART */
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Heart */
+
     .heart {
       font-size: 70px;
-      animation: beat 1.2s infinite;
-      filter: drop-shadow(0 0 15px #ff4d88);
+      display: inline-block;
+
+      filter:
+        drop-shadow(0 0 10px #ff4d88)
+        drop-shadow(0 0 25px #ff2165);
+
+      animation: heartbeat 1.2s infinite;
     }
 
-    @keyframes beat {
+    @keyframes heartbeat {
       0%, 100% {
         transform: scale(1);
       }
 
       50% {
-        transform: scale(1.2);
+        transform: scale(1.18);
       }
     }
 
-    /* HEADING */
-    h1 {
-      font-size: clamp(35px, 8vw, 65px);
-      margin: 15px 0;
+    /* Heading */
 
-      color: #fff;
+    h1 {
+      margin: 20px 0;
+
+      font-size: clamp(34px, 8vw, 62px);
+      line-height: 1.1;
+
+      color: white;
 
       text-shadow:
         0 0 10px #ff4d88,
-        0 0 30px #ff2165;
+        0 0 25px #ff2165,
+        0 0 45px rgba(255, 33, 101, 0.5);
     }
 
-    /* TYPING */
+    /* Typing */
+
     .typing {
-      font-size: 20px;
       min-height: 35px;
+
+      margin-bottom: 25px;
+
+      font-size: 19px;
 
       color: #ffd6e5;
 
-      margin-bottom: 25px;
+      text-shadow:
+        0 0 10px rgba(255, 100, 160, 0.5);
     }
 
-    /* PHOTO */
-    .photo-box {
-      width: 240px;
-      height: 240px;
+    /* Photo */
 
-      margin: 25px auto;
+    .photo-box {
+      width: 245px;
+      height: 245px;
+
+      margin: 30px auto;
+
+      padding: 5px;
 
       border-radius: 50%;
 
-      overflow: hidden;
-
-      border: 5px solid #ff6b9d;
+      background:
+        linear-gradient(
+          135deg,
+          #ff4f94,
+          #ffb0cf,
+          #a95cff,
+          #ff4f94
+        );
 
       box-shadow:
-        0 0 20px #ff2165,
-        0 0 50px rgba(255,33,101,0.5);
+        0 0 25px rgba(255, 33, 101, 0.7),
+        0 0 60px rgba(255, 33, 101, 0.3);
+
+      overflow: hidden;
 
       transition: 0.4s;
     }
@@ -115,108 +160,139 @@
     .photo-box img {
       width: 100%;
       height: 100%;
+
+      display: block;
+
       object-fit: cover;
+
+      border-radius: 50%;
+
+      border: 3px solid #210012;
     }
 
-    /* MESSAGE */
-    .message {
-      line-height: 1.9;
+    /* Message */
 
-      font-size: 17px;
+    .message {
+      max-width: 620px;
+
+      margin: 30px auto;
 
       color: #ffeaf2;
 
-      margin: 25px auto;
+      font-size: 17px;
 
-      max-width: 600px;
+      line-height: 1.9;
     }
 
     .highlight {
-      color: #ffb3cd;
+      color: #ff9fc5;
+
       font-weight: bold;
+
+      text-shadow:
+        0 0 10px rgba(255, 100, 160, 0.5);
     }
 
-    /* BUTTON */
+    /* Button */
+
     button {
       border: none;
 
-      padding: 15px 30px;
+      padding: 16px 32px;
 
       border-radius: 50px;
 
       background:
-        linear-gradient(45deg, #ff174f, #ff70a3);
+        linear-gradient(
+          45deg,
+          #ff174f,
+          #ff4f94,
+          #ff70a3
+        );
 
       color: white;
 
-      font-size: 17px;
+      font-size: 16px;
 
       font-weight: bold;
 
       cursor: pointer;
 
       box-shadow:
-        0 8px 25px rgba(255,0,80,0.4);
+        0 8px 25px rgba(255, 0, 80, 0.45);
 
       transition: 0.3s;
     }
 
     button:hover {
-      transform: scale(1.08);
+      transform: translateY(-4px) scale(1.06);
 
       box-shadow:
-        0 12px 35px rgba(255,0,80,0.6);
+        0 15px 40px rgba(255, 0, 80, 0.65);
     }
 
-    /* SURPRISE */
+    button:active {
+      transform: scale(0.96);
+    }
+
+    /* Surprise */
+
     #surprise {
       display: none;
 
       margin-top: 30px;
 
-      font-size: 22px;
+      padding: 25px;
 
-      color: #fff;
+      border-radius: 25px;
+
+      background: rgba(255, 255, 255, 0.07);
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      font-size: 20px;
 
       line-height: 1.7;
 
-      animation: fadeIn 1s ease;
+      animation: surprise 1s ease;
     }
 
-    @keyframes fadeIn {
+    @keyframes surprise {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(25px) scale(0.95);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
     }
 
-    /* FLOATING HEARTS */
+    /* Floating Hearts */
+
     .floating-heart {
       position: fixed;
 
-      bottom: -30px;
+      bottom: -40px;
 
       font-size: 25px;
 
-      animation: floatUp linear forwards;
-
       opacity: 0.8;
 
-      z-index: 1;
+      z-index: 2;
 
       pointer-events: none;
+
+      animation: floatUp linear forwards;
     }
 
     @keyframes floatUp {
       from {
         transform:
           translateY(0)
-          rotate(0deg);
+          rotate(0deg)
+          scale(1);
 
         opacity: 0.8;
       }
@@ -224,26 +300,44 @@
       to {
         transform:
           translateY(-110vh)
-          rotate(360deg);
+          rotate(360deg)
+          scale(1.5);
 
         opacity: 0;
       }
     }
 
-    /* FOOTER */
+    /* Footer */
+
     .footer {
-      margin-top: 30px;
+      margin-top: 35px;
 
       color: #ffc4d8;
 
       font-size: 14px;
+
+      letter-spacing: 0.5px;
     }
 
-    /* MOBILE */
+    /* Mobile */
+
     @media (max-width: 600px) {
 
       .card {
-        padding: 40px 20px;
+        padding: 40px 18px;
+        border-radius: 28px;
+      }
+
+      .heart {
+        font-size: 60px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .typing {
+        font-size: 16px;
       }
 
       .photo-box {
@@ -253,10 +347,16 @@
 
       .message {
         font-size: 15px;
+        line-height: 1.85;
       }
 
-      .typing {
-        font-size: 17px;
+      button {
+        padding: 14px 24px;
+        font-size: 15px;
+      }
+
+      #surprise {
+        font-size: 18px;
       }
     }
   </style>
@@ -269,56 +369,104 @@
     <div class="card">
 
       <!-- HEART -->
-      <div class="heart">❤️</div>
+
+      <div class="heart">
+        ❤️
+      </div>
 
 
       <!-- TITLE -->
-      <h1>Hey, Beautifull Princess Jiii</h1>
+
+      <h1>
+        Hey, Beautiful Princess Jiii
+      </h1>
 
 
       <!-- TYPING TEXT -->
-      <div class="typing" id="typing"></div>
+
+      <div
+        class="typing"
+        id="typing">
+      </div>
 
 
-      <!-- YOUR PHOTO -->
+      <!-- PHOTO -->
+
+      <!--
+        GitHub folder structure:
+
+        index.html
+        2/
+          1.jpg
+
+        Therefore the image path is:
+        2/1.jpg
+      -->
+
       <div class="photo-box">
 
         <img
-          src="IMG_20260909_175140_398.jpg"
-          alt="Someone Special"
-        />
+          src="2/1.jpg"
+          alt="My Beautiful Princess"
+        >
 
       </div>
 
 
-      <!-- HINGLISH MESSAGE -->
+      <!-- MESSAGE -->
+
       <p class="message">
-Pata nahi kuch log life mein aakar kab itne special ban jaate hain… ✨
 
-Bas tum bhi unhi logon mein se ho. ❤️ Tumhari ek simple si smile bhi mood ko automatically better kar deti hai.
+        Pata nahi kuch log life mein aakar
+        kab itne special ban jaate hain… ✨
 
-Tumhari choti-choti baatein, tumhara cute sa attitude, aur tumhari woh simple si smile… pata nahi kyun, par in sab mein kuch alag hi baat hai. 🫶
+        <br><br>
 
-Life mein bahut saare log milte hain, baatein hoti hain, memories banti hain… lekin kuch logon ki presence hi alag feel hoti hai.
+        Bas tum bhi unhi logon mein se ho. ❤️
+        Tumhari ek simple si smile bhi mood ko
+        automatically better kar deti hai.
 
-Aur honestly… tum unhi special logon mein se ho. ❤️
+        <br><br>
 
-Bas hamesha aise hi smile karti rehna, kyunki tumhari smile sach mein bahut achhi lagti hai. ✨
-        Aur honestly...
+        Tumhari choti-choti baatein,
+        tumhara cute sa attitude,
+        aur tumhari woh simple si smile…
+        pata nahi kyun, par in sab mein
+        kuch alag hi baat hai. 🫶
+
+        <br><br>
+
+        Life mein bahut saare log milte hain,
+        baatein hoti hain, memories banti hain…
+        lekin kuch logon ki presence hi
+        alag feel hoti hai.
+
+        <br><br>
+
+        Aur honestly…
+
         <span class="highlight">
-          tum unhi logon mein se ho. ❤️
+          tum unhi special logon mein se ho. ❤️
         </span>
+
+        <br><br>
+
+        Bas hamesha aise hi smile karti rehna,
+        kyunki tumhari smile sach mein
+        bahut achhi lagti hai. ✨
 
       </p>
 
 
-      <!-- BUTTON -->
+      <!-- SURPRISE BUTTON -->
+
       <button onclick="showSurprise()">
         Click Karo... Ek Surprise Hai 💌
       </button>
 
 
-      <!-- SURPRISE -->
+      <!-- SURPRISE MESSAGE -->
+
       <div id="surprise">
 
         🌹 Ek baat bolu?
@@ -330,15 +478,26 @@ Bas hamesha aise hi smile karti rehna, kyunki tumhari smile sach mein bahut achh
 
         <br><br>
 
-        Always Keep Smiling.
+        Tumhari smile hamesha
+        aise hi rehni chahiye. 🫶✨
+
+        <br><br>
+
+        Always Keep Smiling,
+        Beautiful Princess. ❤️
 
       </div>
 
 
       <!-- FOOTER -->
+
       <div class="footer">
 
-        Made with ❤️ & mayank sir jii 
+        Made with ❤️ & a little bit of madness
+
+        <br>
+
+        — Mayank Sir Jii ✨
 
       </div>
 
@@ -362,7 +521,8 @@ Bas hamesha aise hi smile karti rehna, kyunki tumhari smile sach mein bahut achh
 
       if (index < text.length) {
 
-        document.getElementById("typing")
+        document
+          .getElementById("typing")
           .textContent += text.charAt(index);
 
         index++;
@@ -377,7 +537,7 @@ Bas hamesha aise hi smile karti rehna, kyunki tumhari smile sach mein bahut achh
 
 
     /* =========================
-       SURPRISE BUTTON
+       SURPRISE
     ========================= */
 
     function showSurprise() {
@@ -388,13 +548,20 @@ Bas hamesha aise hi smile karti rehna, kyunki tumhari smile sach mein bahut achh
       surprise.style.display = "block";
 
 
-      /* Create many hearts */
+      const button =
+        document.querySelector("button");
 
-      for (let i = 0; i < 35; i++) {
+      button.innerHTML =
+        "Surprise Unlocked ❤️";
+
+
+      for (let i = 0; i < 40; i++) {
 
         setTimeout(() => {
+
           createHeart();
-        }, i * 80);
+
+        }, i * 70);
 
       }
 
@@ -421,6 +588,7 @@ Bas hamesha aise hi smile karti rehna, kyunki tumhari smile sach mein bahut achh
         "💗",
         "💘",
         "💝",
+        "💞",
         "✨"
       ];
 
@@ -442,7 +610,7 @@ Bas hamesha aise hi smile karti rehna, kyunki tumhari smile sach mein bahut achh
 
 
       heart.style.fontSize =
-        (15 + Math.random() * 25) + "px";
+        (15 + Math.random() * 28) + "px";
 
 
       document.body.appendChild(heart);
@@ -452,14 +620,18 @@ Bas hamesha aise hi smile karti rehna, kyunki tumhari smile sach mein bahut achh
 
         heart.remove();
 
-      }, 8000);
+      }, 9000);
 
     }
 
 
     /* Automatic Hearts */
 
-    setInterval(createHeart, 700);
+    setInterval(() => {
+
+      createHeart();
+
+    }, 800);
 
   </script>
 
